@@ -1,0 +1,12 @@
+<div class="content_login">
+    <h1>Login</h1>
+    <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Ingrese su username" type="text" autocomplete="off" [(ngModel)]="usuario.username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput placeholder="Ingrese su contraseña" type="password" [(ngModel)]="usuario.password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="iniciarSesion()">Iniciar Sesión</button>
+</div>

@@ -1,0 +1,11 @@
+.content_login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+mat-form-field{
+    width: 250px;
+}
