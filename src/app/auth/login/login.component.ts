@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Usuario } from '../../models/Usuario.model';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,11 +26,21 @@ export class LoginComponent implements OnInit {
         this.authService.getPayloadToken(token);
         // Obtener solo el token y quitar el Bearer
         token = token.replace('Bearer ', '')
-        sessionStorage.setItem('token', token)
+        localStorage.setItem('token', token)
         this.router.navigate(['/admin-panel']);
+        Swal.fire(
+          'Bienvenido!',
+          'Al sistema..!',
+          'success'
+        )
       },
       error: (err) => {
         console.log(err);
+        Swal.fire(
+          'Error!',
+          'Credenciales incorrectas..!',
+          'error'
+        )
         
       }
     })

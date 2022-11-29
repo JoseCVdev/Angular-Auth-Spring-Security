@@ -10,7 +10,7 @@ export class CategoriasService {
 
   getCategorias(){
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
     })
     return this.http.get("http://localhost:8090/api/categoria/get-all", { headers: headers });
   }

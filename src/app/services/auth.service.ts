@@ -7,8 +7,6 @@ import { IUsuario } from '../interfaces/Usuario.interface';
   providedIn: 'root'
 })
 export class AuthService {
-
-  auth_token: string = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb3NlbWFudWVsIiwiZXhwIjoxNjcxNjM1OTI0LCJpZF91c3VhcmlvIjoxLCJub21icmUiOiJKb3NlIE1hbnVlbCIsInJvbCI6IkFETUlOX1JPTEUifQ.eIIzondQxEHedJU9jtGI6uHEql31pARf4BC6S2CK7YQ";
  
   usuarioLogged: IUsuario;
 
@@ -23,7 +21,7 @@ export class AuthService {
     delete payload.sub;
     delete payload.exp;
     this.usuarioLogged = payload;    
-    sessionStorage.setItem("usuarioLogged", JSON.stringify(this.usuarioLogged))
+    localStorage.setItem("usuarioLogged", JSON.stringify(this.usuarioLogged))
   }
 
 }

@@ -21,7 +21,7 @@ export class AdminPanelComponent implements OnInit {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);    
 
-    let usuario_session = sessionStorage.getItem('usuarioLogged');
+    let usuario_session = localStorage.getItem('usuarioLogged');
     this.usuario = JSON.parse(usuario_session!)
     
   }
@@ -37,8 +37,8 @@ export class AdminPanelComponent implements OnInit {
 
 
   cerrarSesion(){
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('usuarioLogged');
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuarioLogged');
     this.router.navigate(['/login'])
   }
 
